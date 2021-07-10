@@ -129,8 +129,8 @@ export const DashBoardComponent = () => {
               </div>
             </div>
             <div className="col-md-4">
-              <div className="summary-card-bal">
-                <div className="row">
+              <div className="summary-card-vol">
+                <div className="row row-grid">
                   <div className="col-md-8">
                     <p className="par-main">Incoming volume </p>
                   </div>
@@ -172,8 +172,9 @@ export const DashBoardComponent = () => {
             </div>
           </div>
           <div className="graph-area pt-3 pl-5 pr-5 pb-3">
+            <div className="divider"></div>
             <div className="row row-grid">
-              <div className="col-md-3">
+              <div className="col-md-4">
                 <p className="par-main">
                   <img src={tooltip} alt="" /> New customers{" "}
                 </p>
@@ -198,7 +199,7 @@ export const DashBoardComponent = () => {
                   <p className="ml-auto prices">+15%</p>
                 </div>
               </div>
-              <div className="col-md-2"></div>
+              <div className="col-md-1"></div>
               <div className="col-md-7">
                 <Chart />
               </div>

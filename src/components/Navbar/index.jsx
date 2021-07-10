@@ -41,7 +41,7 @@ export const NavBar = ({ hideMenu }) => {
               <img src={notify} alt="notify" />
             </li>
             <li className="notify notify-items">
-              <img src={avatar} alt="notify" />
+              <img src={avatar} alt="notify" style={{width: "25px"}} />
             </li>
           </ul>
         </div>

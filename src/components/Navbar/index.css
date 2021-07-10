@@ -88,13 +88,17 @@ input:checked+.sliderswitch:before {
 }
 
 .navbar-nav .notify-items {
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 .abs-center-x {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+}
+
+.has-search {
+    width: 394px;
 }
 
 .has-search .form-control {
@@ -138,5 +142,8 @@ input:checked+.sliderswitch:before {
 
     .navbar .title {
         margin-left: 5px;
+    }
+    .has-search {
+        width:100%;
     }
 }
