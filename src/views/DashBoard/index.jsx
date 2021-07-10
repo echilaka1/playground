@@ -5,6 +5,7 @@ import verify from "../../assets/img/verify.png";
 import hide from "../../assets/img/hide.png";
 import usa from "../../assets/img/us.png";
 import naija from "../../assets/img/naija.png";
+import tooltip from "../../assets/img/tooltip.png";
 import ghana from "../../assets/img/ghana.png";
 import funnel from "../../assets/img/funnel.png";
 import up from "../../assets/img/row-up.png";
@@ -12,6 +13,7 @@ import down from "../../assets/img/row-down.png";
 import Button from "../../components/Button";
 import Select from "../../components/Dropdown/index";
 import { Link } from "react-router-dom";
+import { Bar } from "react-chartjs-2";
 
 export const DashBoardComponent = () => {
   const options = [
@@ -25,6 +27,33 @@ export const DashBoardComponent = () => {
     { value: "yesterday", label: "Yesterday" },
     { value: "month", label: "This Month" },
   ];
+
+  const state = {
+    labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Sat"],
+    datasets: [
+      {
+        label: "Collections",
+        backgroundColor: "#BAD5F9",
+        borderColor: "#BAD5F9",
+        borderWidth: 1,
+        //stack: 1,
+        hoverBackgroundColor: "#2F80ED",
+        hoverBorderColor: "#2F80ED",
+        data: [65, 59, 80, 81, 56, 55],
+      },
+
+      {
+        label: "Payouts",
+        backgroundColor: "#FECCE0",
+        borderColor: "#FECCE0",
+        borderWidth: 1,
+        //stack: 1,
+        hoverBackgroundColor: "#FD66A3",
+        hoverBorderColor: "#FD66A3",
+        data: [45, 79, 50, 41, 16, 85],
+      },
+    ],
+  };
 
   return (
     <div>
@@ -184,7 +213,64 @@ export const DashBoardComponent = () => {
               </div>
             </div>
           </div>
-          <div className="graph-area p-5"></div>
+          <div className="graph-area pt-3 pl-5 pr-5 pb-3">
+            <div className="row row-grid">
+              <div className="col-md-4">
+                <p className="par-main">
+                  <img src={tooltip} alt="" /> New customers{" "}
+                </p>
+                <div className="d-flex pt-2 pb-3">
+                  <p className="par-acc" style={{ color: "#1C223C" }}>
+                    6,045
+                  </p>
+                  <p className="ml-auto prices">+24%</p>
+                </div>
+                <p className="par-main">Collections</p>
+                <div className="d-flex pt-2 pb-3">
+                  <p className="par-acc" style={{ color: "#1C223C" }}>
+                    11,000
+                  </p>
+                  <p className="ml-auto prices">+18%</p>
+                </div>
+                <p className="par-main">Payouts</p>
+                <div className="d-flex pt-2 pb-3">
+                  <p className="par-acc" style={{ color: "#1C223C" }}>
+                    5,658
+                  </p>
+                  <p className="ml-auto prices">+15%</p>
+                </div>
+              </div>
+              <div className="col-md-2"></div>
+              <div className="col-md-6">
+                <Bar
+                  data={state}
+                  width="300"
+                  options={{
+                    responsive: true,
+                    type: "bar",
+                    plugins: {
+                      legend: {
+                        labels: {
+                          usePointStyle: true,
+                          boxWidth: 6,
+                        },
+                        display: true,
+                        position: "bottom",
+                        align: "start"
+                      },
+                    },
+                    scales: {
+                      x: {
+                        grid: {
+                          display: false,
+                        },
+                      },
+                    },
+                  }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </SideBar>
     </div>
