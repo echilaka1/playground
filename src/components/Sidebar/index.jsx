@@ -4,7 +4,7 @@ import "./index.css";
 import NavBar from "../Navbar/index";
 import PropTypes from "prop-types";
 import dashboardNow from "../../assets/img/menu-icon.png";
-import add from "../../assets/img/067-plus.png";
+import logo from "../../assets/img/logo-dark.svg";
 
 export class SideBar extends Component {
   state = {
@@ -50,7 +50,7 @@ export class SideBar extends Component {
           </div>
           <div className="heading">
             <div className="info text-center">
-              <h3><img src={add} alt="" />&nbsp; Add Logo</h3>
+              <img src={logo} alt="" />
               <p>ID: EVSD00000001</p>
             </div>
           </div>

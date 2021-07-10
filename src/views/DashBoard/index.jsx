@@ -13,7 +13,7 @@ import down from "../../assets/img/row-down.png";
 import Button from "../../components/Button";
 import Select from "../../components/Dropdown/index";
 import { Link } from "react-router-dom";
-import { Bar } from "react-chartjs-2";
+import Chart from "../../components/Chart";
 
 export const DashBoardComponent = () => {
   const options = [
@@ -21,39 +21,6 @@ export const DashBoardComponent = () => {
     { value: "yesterday", label: "Yesterday" },
     { value: "month", label: "This Month" },
   ];
-
-  const optionsAnalytics = [
-    { value: "today", label: "Filter by weekly" },
-    { value: "yesterday", label: "Yesterday" },
-    { value: "month", label: "This Month" },
-  ];
-
-  const state = {
-    labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Sat"],
-    datasets: [
-      {
-        label: "Collections",
-        backgroundColor: "#BAD5F9",
-        borderColor: "#BAD5F9",
-        borderWidth: 1,
-        //stack: 1,
-        hoverBackgroundColor: "#2F80ED",
-        hoverBorderColor: "#2F80ED",
-        data: [65, 59, 80, 81, 56, 55],
-      },
-
-      {
-        label: "Payouts",
-        backgroundColor: "#FECCE0",
-        borderColor: "#FECCE0",
-        borderWidth: 1,
-        //stack: 1,
-        hoverBackgroundColor: "#FD66A3",
-        hoverBorderColor: "#FD66A3",
-        data: [45, 79, 50, 41, 16, 85],
-      },
-    ],
-  };
 
   return (
     <div>
@@ -195,27 +162,18 @@ export const DashBoardComponent = () => {
           </div>
           <div className="analytics mt-4 p-4">
             <div className="row no-gutters">
-              <div className="col-sm-3 col-md-9">
+              <div className="col-sm-9 col-md-9">
                 <h1 className="par-acc">Analytics</h1>
               </div>
-              <div className="col-sm-1 col-md-1 text-right">
-                <img src={funnel} alt="" />
-              </div>
-              <div className="col-sm-8 col-md-2">
-                <Select
-                  options={optionsAnalytics}
-                  handleChange={() => {}}
-                  defaultValue={{
-                    label: "Filter by weekly",
-                    value: "today",
-                  }}
-                />
+              <div className="col-sm-3 col-md-3 text-right">
+                <img src={funnel} alt="" /> Filter by weekly{" "}
+                <i className="fa fa-angle-down"></i>
               </div>
             </div>
           </div>
           <div className="graph-area pt-3 pl-5 pr-5 pb-3">
             <div className="row row-grid">
-              <div className="col-md-4">
+              <div className="col-md-3">
                 <p className="par-main">
                   <img src={tooltip} alt="" /> New customers{" "}
                 </p>
@@ -241,33 +199,8 @@ export const DashBoardComponent = () => {
                 </div>
               </div>
               <div className="col-md-2"></div>
-              <div className="col-md-6">
-                <Bar
-                  data={state}
-                  width="300"
-                  options={{
-                    responsive: true,
-                    type: "bar",
-                    plugins: {
-                      legend: {
-                        labels: {
-                          usePointStyle: true,
-                          boxWidth: 6,
-                        },
-                        display: true,
-                        position: "bottom",
-                        align: "start"
-                      },
-                    },
-                    scales: {
-                      x: {
-                        grid: {
-                          display: false,
-                        },
-                      },
-                    },
-                  }}
-                />
+              <div className="col-md-7">
+                <Chart />
               </div>
             </div>
           </div>

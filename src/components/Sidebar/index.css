@@ -31,18 +31,7 @@
     overflow: hidden;
 }
 
-.side-nav .heading .info>h3 { 
-    background: #F3F3F4;
-    border-radius: 4px;
-    padding: 10px;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 16px;
-    line-height: 26px;
-    letter-spacing: 0.01em;
-    color: #48484D;
-    max-width:150px;
-    margin:auto;
+.side-nav .heading .info>img { 
     margin-top: 50px;
     margin-bottom: 8px;
 }
