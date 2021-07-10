@@ -1,0 +1,35 @@
+.select_default_sty>.css-yk16xz-control {
+    cursor: pointer;
+    border: 1px solid #BDBDBD;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 20px;
+    height: 47px;
+    width: 100%;
+    color: #1C223C;
+    background: white;
+    border-radius: 5px;
+}
+
+.select_default_sty>.css-yk16xz-control>.css-g1d714-ValueContainer>.css-1uccc91-singleValue {
+    color: #1C223C;
+    font-size: 12px;
+}
+
+.css-1pahdxg-control {
+    border: 1px solid #BDBDBD !important;
+    box-shadow: none !important;
+}
+
+.select_default_sty>.css-1pahdxg-control {
+    border: 1px solid #BDBDBD !important;
+    min-height: 45px !important;
+}
+
+.select_default_sty>.css-1pahdxg-control:hover {
+    border: 1px solid #BDBDBD !important;
+}
+
+.css-1okebmr-indicatorSeparator {
+    background-color: rgba(51, 51, 51, 0.04) !important;
+}

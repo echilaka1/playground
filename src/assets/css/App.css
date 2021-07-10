@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'GTWalsheimPro-Regular';
+  src: url('../fonts/GTWalsheimPro-Regular.eot');
+  /* IE9 Compat Modes */
+  src: url('../fonts/GTWalsheimPro-Regular.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../fonts/GTWalsheimPro-Regular.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('../fonts/GTWalsheimPro-Regular.ttf') format('truetype');
+  /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'GTWalsheimPro-Bold';
+  src: url('../fonts/GTWalsheimPro-Bold.eot');
+  /* IE9 Compat Modes */
+  src: url('../fonts/GTWalsheimPro-Bold.woff2') format('woff2'),
+    /* Super Modern Browsers */
+    url('../fonts/GTWalsheimPro-Bold.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('../fonts/GTWalsheimPro-Bold.ttf') format('truetype');
+  /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: bold;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0 !important;
+  font-size: 14px;
+}
+
+body {
+  font-family: "GTWalsheimPro-Regular", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0px;
+  background-color: #F7FAFE;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: #2F80ED;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #2F80ED;
+}
+
+.row.row-grid [class*="col-"]+[class*="col-"] {
+  margin-top: 15px;
+}
+
+@media (min-width: 1200px) {
+  .row.row-grid [class*="col-lg-"]+[class*="col-lg-"] {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .row.row-grid [class*="col-md-"]+[class*="col-md-"] {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .row.row-grid [class*="col-sm-"]+[class*="col-sm-"] {
+    margin-top: 0;
+  }
+}
+
+#contents {
+  position: relative;
+  transition: .3s;
+  margin-left: 290px;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+  #contents {
+    margin-left: 0px;
+  }
+}
+
+.verified-batch {
+  background: #CCDDCC;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  color: #005500;
+}
+
+.title-main {
+  font-family: "GTWalsheimPro-Bold";
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  color: #1C223C;
+  margin-bottom: 5px;
+}
+
+.par-main {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 26px;
+  letter-spacing: 0.01em;
+  color: #48484D;
+}
