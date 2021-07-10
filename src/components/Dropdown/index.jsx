@@ -26,7 +26,7 @@ const SelectComponent = ({
 SelectComponent.propTypes = {
   data: PropTypes.array,
   handleChange: PropTypes.func.isRequired,
-  defaultValue: PropTypes.string,
+  defaultValue: PropTypes.object,
   disabled: PropTypes.bool,
   className: PropTypes.string,
 };

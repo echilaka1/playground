@@ -3,14 +3,34 @@ import SideBar from "../../components/Sidebar";
 import frame from "../../assets/img/Frame.png";
 import verify from "../../assets/img/verify.png";
 import hide from "../../assets/img/hide.png";
+import usa from "../../assets/img/us.png";
+import naija from "../../assets/img/naija.png";
+import ghana from "../../assets/img/ghana.png";
+import funnel from "../../assets/img/funnel.png";
+import up from "../../assets/img/row-up.png";
+import down from "../../assets/img/row-down.png";
 import Button from "../../components/Button";
+import Select from "../../components/Dropdown/index";
+import { Link } from "react-router-dom";
 
 export const DashBoardComponent = () => {
+  const options = [
+    { value: "today", label: "Today" },
+    { value: "yesterday", label: "Yesterday" },
+    { value: "month", label: "This Month" },
+  ];
+
+  const optionsAnalytics = [
+    { value: "today", label: "Filter by weekly" },
+    { value: "yesterday", label: "Yesterday" },
+    { value: "month", label: "This Month" },
+  ];
+
   return (
     <div>
       <SideBar>
         <div className="p-3">
-          <div className="row">
+          <div className="row row-grid">
             <div className="col-md-10">
               <h1 className="title-main">Hello, Stone</h1>
               <p className="par-main">
@@ -25,7 +45,7 @@ export const DashBoardComponent = () => {
               </div>
             </div>
           </div>
-          <div className="row mt-5">
+          <div className="row row-grid mt-5">
             <div className="col-md-2">
               <Button
                 text="Add Money"
@@ -58,9 +78,113 @@ export const DashBoardComponent = () => {
           </div>
           <div className="row mt-4 mb-3">
             <div className="col-md-12">
-              <p className="par-main">Hide account summary <img src={hide} alt="" /></p>
+              <p className="par-main">
+                Hide account summary <img src={hide} alt="" />
+              </p>
             </div>
           </div>
+          <div className="row row-grid">
+            <div className="col-md-4">
+              <div className="summary-card">
+                <p className="par-acc">All accounts value in USD</p>
+                <h1 className="total-amt">
+                  USD 1,853,025{" "}
+                  <img src={usa} alt="" style={{ verticalAlign: "middle" }} />
+                  <i
+                    className="fa fa-angle-down"
+                    style={{ fontSize: "16px" }}
+                  ></i>
+                </h1>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="summary-card-bal">
+                <div className="d-flex">
+                  <p className="par-acc">Available accounts balance </p>
+                  <p className="ml-auto accounts">5</p>
+                </div>
+                <div className="pt-4 pl-4 pr-4">
+                  <div className="row">
+                    <div className="col-md-2">
+                      <img src={naija} alt="" />
+                    </div>
+                    <div className="col-md-10">
+                      <p className="par-main">NGN 228,054,050</p>
+                      <p className="par-main" style={{ color: "#1C223C" }}>
+                        Nigerian Naira
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="pt-4 pl-4 pr-4 mb-2">
+                  <div className="row">
+                    <div className="col-md-2">
+                      <img src={ghana} alt="" />
+                    </div>
+                    <div className="col-md-10">
+                      <p className="par-main">GHC 1,880,210</p>
+                      <p className="par-main" style={{ color: "#1C223C" }}>
+                        Ugandan Shillings
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <Link to="/">See all</Link>
+              </div>
+            </div>
+            <div className="col-md-4">
+              <div className="summary-card-bal">
+                <div className="row">
+                  <div className="col-md-8">
+                    <p className="par-main">Incoming volume </p>
+                  </div>
+                  <div className="col-md-4">
+                    <Select
+                      options={options}
+                      handleChange={() => {}}
+                      defaultValue={{ label: "Today", value: "today" }}
+                    />
+                  </div>
+                </div>
+                <p className="par-acc" style={{ color: "#1C223C" }}>
+                  $ 1,431,471
+                </p>
+                <p className="prices">
+                  <img src={up} alt="" />
+                  &nbsp; 24%
+                </p>
+                <p className="par-main pt-4">Outgoing volume </p>
+                <p className="par-acc" style={{ color: "#1C223C" }}>
+                  $ 680,000
+                </p>
+                <p className="prices">
+                  <img src={down} alt="" />
+                  &nbsp; 12%
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="analytics mt-4 p-4">
+            <div className="row no-gutters">
+              <div className="col-sm-3 col-md-9">
+                <h1 className="par-acc">Analytics</h1>
+              </div>
+              <div className="col-sm-1 col-md-1 text-right">
+                <img src={funnel} alt="" />
+              </div>
+              <div className="col-sm-8 col-md-2">
+                <Select
+                  options={optionsAnalytics}
+                  handleChange={() => {}}
+                  defaultValue={{
+                    label: "Filter by weekly",
+                    value: "today",
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="graph-area p-5"></div>
         </div>
       </SideBar>
     </div>
